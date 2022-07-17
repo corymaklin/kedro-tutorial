@@ -1,0 +1,36 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://kedro.readthedocs.io/en/stable/data/data_catalog.html
+raw_adult:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/adult.data
+  load_args:
+    sep: ", "
+    names: [
+      "age",
+      "workclass",
+      "fnlwgt",
+      "education",
+      "education-num",
+      "marital-status",
+      "occupation",
+      "relationship",
+      "race",
+      "sex",
+      "capital-gain",
+      "capital-loss",
+      "hours-per-week",
+      "native-country",
+      "salary"
+    ]
+  layer: raw
+
+model_input_table:
+  type: pandas.ParquetDataSet
+  filepath: data/05_model_input/model_input_table.parquet
+
+regressor:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/regressor.pickle
+  versioned: true

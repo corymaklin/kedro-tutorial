@@ -1,0 +1,20 @@
+model_options:
+  target: salary
+  test_size: 0.2
+  random_state: 42
+  features:
+    categorical:
+      - workclass
+      - marital-status
+      - occupation
+      - relationship
+      - race
+      - sex
+      - native-country
+    numerical:
+      - age
+      - fnlwgt
+      - education-num
+      - capital-gain
+      - hours-per-week
+      - capital-loss
